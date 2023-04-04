@@ -12,5 +12,5 @@ var homeStartingContent = "Lorem Ipsum is simply dummy text of the printing and 
 app.get("/", function (req, res) {
     res.render("home", {home:homeStartingContent.slice(0,180)})
 })
-// hello
+
 app.listen(3000, function () { })
