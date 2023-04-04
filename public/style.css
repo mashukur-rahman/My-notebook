@@ -1,0 +1,28 @@
+.navbar{
+    margin-bottom:2% ;
+   
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+footer{
+    margin-top: auto;
+    text-align: center;
+    background-color: aliceblue;
+}
+.bg-body-tertiary{
+    background-color: aliceblue !important;
+}
+.row{
+    margin-left: 10%;
+    margin-right:10% ;
+    width: 80%;
+}
+p{
+    font-weight: 100;
+    line-height: normal;
+    font-size: 0.8rem;
+}
