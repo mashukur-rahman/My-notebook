@@ -45,6 +45,15 @@ app.get("/post", function(req, res){
     res.render("post")
 })
 
+app.get("/posts/:id", function(req, res){
+    var postId=req.params.id
+    async function post(){
+        var post=await blog.findById(postId).exec()
+        res.render("postpage", {heading:post.title, text:post.text})
+    }
+    post()
+})
+
 app.post("/post", upload.single("thumbnail"),function(req, res){
    const page=new blog({
     title: req.body.title,
