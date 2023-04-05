@@ -13,4 +13,7 @@ app.get("/", function (req, res) {
     res.render("home", {home:homeStartingContent.slice(0,180)})
 })
 
+app.get("/post", function(req, res){
+    res.render("post")
+})
 app.listen(3000, function () { })
