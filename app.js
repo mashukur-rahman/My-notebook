@@ -35,32 +35,33 @@ const storage = multer.diskStorage({
 app.get("/", function (req, res) {
     async function find(){
         var post= await blog.find({})
-        console.log(post)
+        // console.log(post)
         res.render("home", {home:homeStartingContent.slice(0,180), newarray:post})
     }
     find()
 })
 
-app.get("/post", function(req, res){
-    res.render("post")
+app.get("/compose", function(req, res){
+    res.render("compose")
 })
 
-app.get("/posts/:id", function(req, res){
-    var postId=req.params.id
-    async function post(){
-        var post=await blog.findById(postId).exec()
-        res.render("postpage", {heading:post.title, text:post.text})
-    }
-    post()
-})
+// app.get("/posts/:id", function(req, res){
+//     var postId=req.params.id
+//     async function post(){
+//         var post=await blog.findById(postId).exec()
+//         res.render("postpage", {heading:post.title, text:post.text})
+//     }
+//     post()
+// })
 
-app.post("/post", upload.single("thumbnail"),function(req, res){
+
+app.post("/compose", upload.single("thumbnail"),function(req, res){
    const page=new blog({
     title: req.body.title,
     text:req.body.text,
     photopath:req.file.filename
    })
    page.save()
-   res.redirect("/")
+res.redirect("/")    
 })
 app.listen(3000, function () { })
