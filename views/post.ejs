@@ -1,5 +1,21 @@
 <%- include ("header.ejs")%>
-
-
-
+<div class="container-fluid">
+    <form action="/post" method="post">
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Title</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Text</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" name="text"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Thumbnail</label>
+    <input class="form-control" type="file" id="formFile">
+  </div>
+  <div class="text-center post-button">
+    <button type="submit" class="btn btn-primary text-center">Post</button>
+  </div>
+</form>
+</div>
 <%- include ("footer.ejs")%>

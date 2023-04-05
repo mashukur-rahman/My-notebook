@@ -1,7 +1,7 @@
-.navbar{
+.navbar, .post-button{
     margin-bottom:2% ;
-   
 }
+
 body{
     min-height: 100vh;
     display: flex;
