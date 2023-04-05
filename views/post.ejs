@@ -1,6 +1,6 @@
 <%- include ("header.ejs")%>
 <div class="container-fluid">
-    <form action="/post" method="post">
+    <form action="/post" method="post" enctype="multipart/form-data">
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Title</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
@@ -11,7 +11,7 @@
   </div>
   <div class="mb-3">
     <label for="formFile" class="form-label">Thumbnail</label>
-    <input class="form-control" type="file" id="formFile">
+    <input class="form-control" type="file" id="formFile" name="thumbnail">
   </div>
   <div class="text-center post-button">
     <button type="submit" class="btn btn-primary text-center">Post</button>
