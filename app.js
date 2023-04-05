@@ -45,15 +45,6 @@ app.get("/compose", function(req, res){
     res.render("compose")
 })
 
-// app.get("/posts/:id", function(req, res){
-//     var postId=req.params.id
-//     async function post(){
-//         var post=await blog.findById(postId).exec()
-//         res.render("postpage", {heading:post.title, text:post.text})
-//     }
-//     post()
-// })
-
 
 app.post("/compose", upload.single("thumbnail"),function(req, res){
    const page=new blog({
