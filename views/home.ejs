@@ -1,6 +1,6 @@
 <%- include ("header.ejs") %>
 <div class="container-fluid">
-    <div class="row d-flex justify-content-between">
+    <div class="row d-flex justify-content-center">
 <div class="card col-lg-3 col-md-6">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
@@ -24,7 +24,20 @@
       <p class="card-text"><%=home%>..</p>
       <a href="#" class="btn btn-primary">Read more</a>
     </div>
-  </div>
+    
+</div>
+<% for(var i=0; i<newarray.length; i++){ %>
+
+  <div class="card col-lg-3 col-md-6">
+    <img src="<%=newarray[i].photopath%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%=newarray[i].title%></h5>
+      <p class="card-text"><%=newarray[i].text%></p>
+      <a href="#" class="btn btn-primary">Read more</a>
+    </div>
+
+</div>
+<%}%>
 </div>
 </div>
 <%- include ("footer.ejs") %>

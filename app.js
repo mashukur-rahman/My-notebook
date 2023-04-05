@@ -21,7 +21,7 @@ var homeStartingContent = "Lorem Ipsum is simply dummy text of the printing and 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads/')
+      cb(null, 'public/')
     },
     filename: function (req, file, cb) {
         const extension="."+file.originalname.split('.').pop();
@@ -33,7 +33,12 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 
 app.get("/", function (req, res) {
-    res.render("home", {home:homeStartingContent.slice(0,180)})
+    async function find(){
+        var post= await blog.find({})
+        console.log(post)
+        res.render("home", {home:homeStartingContent.slice(0,180), newarray:post})
+    }
+    find()
 })
 
 app.get("/post", function(req, res){
