@@ -5,7 +5,9 @@ const mongoose = require("mongoose")
 const multer=require("multer")
 
 const app = express()
+
 app.use(express.static("public"))
+app.use('/posts/:postId', express.static("public"));
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -43,6 +45,19 @@ app.get("/", function (req, res) {
 
 app.get("/compose", function(req, res){
     res.render("compose")
+})
+
+
+app.get("/posts/:postId", function(req, res){
+    async function post(){
+      const requestedPostID=req.params.postId;
+      const content= await blog.findById(requestedPostID).exec()
+      res.render("postpage", {content:content})
+
+    }
+  
+    post()
+  
 })
 
 
