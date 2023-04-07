@@ -8,6 +8,7 @@ const app = express()
 
 app.use(express.static("public"))
 app.use('/posts/:postId', express.static("public"));
+app.use('/admin', express.static("public"));
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -78,11 +79,30 @@ app.post("/compose", upload.single("thumbnail"),function(req, res){
     views:0
    })
    page.save()
-res.redirect("/")    
+  res.redirect("/")    
 })
 
 app.get("/admin", function(req, res){
   res.render("admin")
 })
+
+
+app.get("/fetch", function(req, res){
+  
+  async function viewChart(){
+    var yourArray=[]
+    var documentArray= await blog.find({}).exec()
+    for (j=0; j<documentArray.length; j++){
+      yourArray.push(documentArray[j].views)
+    }
+    // console.log(documentArray)
+    var myJsonString = JSON.stringify(yourArray);
+  res.json(myJsonString)
+  }
+  
+  viewChart()
+  
+})
+
 
 app.listen(3000, function () { })
