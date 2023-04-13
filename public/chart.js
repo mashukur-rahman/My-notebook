@@ -1,22 +1,15 @@
-const ctx = document.getElementById('barChart');
-var arr1=[]
 async function logJSONData() {
-  const response = await fetch("http://localhost:3000/fetch");
+  const response = await fetch("/fetch");
   const jsonData = await response.json();
   const myArray=JSON.parse(jsonData)
-  for(var i=0; i<myArray.length; i++){
-    arr1.push(myArray[i])
-  }
-  console.log(arr1)
-}
-logJSONData()
+  const ctx = document.getElementById('barChart');
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Red', 'Blue', 'Yellow'],
       datasets: [{
         label: '# of Votes',
-        data: arr1,
+        data: myArray,
         borderWidth: 1
       }]
     },
@@ -28,3 +21,7 @@ logJSONData()
       }
     }
   });
+
+}
+logJSONData()
+  
