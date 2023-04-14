@@ -6,11 +6,12 @@ async function logJSONData() {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['First', 'Second', 'Third'],
       datasets: [{
-        label: '# of Votes',
+        label: 'Views of top 3 posts',
         data: myArray,
-        borderWidth: 1
+        borderWidth: 0,
+        backgroundColor:"#159895",
       }]
     },
     options: {

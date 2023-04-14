@@ -1,0 +1,68 @@
+body{
+    background-color: aliceblue;
+}
+
+button{
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+
+.card{
+    color: white;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.card-1{
+    background-color: #D14D72;
+    
+}
+
+.card-2{
+    background-color: #263A29;
+    
+}
+
+.card-3{
+    background-color: #E86A33;
+    
+}
+
+.chart{
+    /* width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* margin-left: 5%; */
+    background-color: white;
+    border-radius: 0.4rem;
+}
+
+.second-row{
+    margin-top: 5%;
+}
+
+.naviga{
+    background-color: #19376D;
+    color: aliceblue;
+}
+.nav-link{
+    color: aliceblue !important;
+}
+
+.stick{
+    position: sticky;
+    top: 0px;
+}
+
+.admin-titles{
+    text-align: center;
+}
+
+.top-posts{
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
