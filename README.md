@@ -11,8 +11,11 @@
 4. Edit/Delete posts etc
 
 **Technologies used:**
+
 Front-end: Chart.js, EJS, Bootstrap, CSS, HTML.
+
 Back-end: Node.js, Express.js, npm(various packages such as multer, body-parser etc)
+
 Database: MongoDB
 
 **Watch a demo of the project:** (https://youtu.be/s2cuTwaYtN0)
