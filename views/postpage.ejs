@@ -1,8 +1,21 @@
 <%- include ("header.ejs") -%>
 <div class="container-fluid">
-<%=content.title%>
-<%=content.text%>
-<%=content.views%>
+    <div>
+        <h1>
+            <%=content.title%>
+        </h1>
+    </div>
+    <div>
+        <i class="fa-solid fa-eye"></i>
+        <%=content.views%>
+    </div>
+<div>
+    <p>
+        <%=content.text%>
+    </p>
+</div>
+
+
 </div>
 <%- include ("footer.ejs") -%>
 

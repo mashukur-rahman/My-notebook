@@ -14,7 +14,7 @@ margin-bottom: 2%;
     margin-bottom: 2%;
 }
 .card-1{
-    background-color: #D14D72;
+    background-color: #19A7CE;
     
 }
 
@@ -65,4 +65,14 @@ margin-bottom: 2%;
     border-radius: 0.4rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+}
+
+.table{
+    background-color: white;
+    border-radius: 0.4rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 5%;
+}
+hr{
+    margin-top: 5%;
 }

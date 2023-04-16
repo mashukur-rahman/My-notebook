@@ -79,12 +79,34 @@ app.post("/compose", upload.single("thumbnail"),function(req, res){
     views:0
    })
    page.save()
-  res.redirect("/")    
+  res.redirect("/admin")    
 })
 
 app.get("/admin", function(req, res){
-  res.render("admin")
+  async function find(){
+    const posts= await blog.find({}).exec()
+    const sorted=posts.sort( (a,b) => b.views - a.views );
+    var totalviewers=0
+    for (var j=0; j<posts.length; j++){
+      totalviewers+=posts[j].views
+    }
+    res.render("admin", {newarray:posts, total:totalviewers})
+    console.log(sorted)
+}
+find()
+  
 })
+
+
+app.get("/delete/:id", function(req, res){
+  const id=req.params.id;
+  async function deleted(){
+    await blog.findByIdAndDelete(id)
+    res.redirect("/admin")
+  }
+  deleted()
+})
+
 
 
 app.get("/fetch", function(req, res){
@@ -95,7 +117,7 @@ app.get("/fetch", function(req, res){
     for (j=0; j<documentArray.length; j++){
       yourArray.push(documentArray[j].views)
     }
-    // console.log(documentArray)
+    yourArray.sort( (a,b) => b - a)
     var myJsonString = JSON.stringify(yourArray);
   res.json(myJsonString)
   }
