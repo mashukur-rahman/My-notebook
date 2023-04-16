@@ -1,5 +1,5 @@
 # My-notebook
-**My notebook is a fullstack blog website that I developed as a pet project. Besides being fully responsive. some other features of the website is-**
+**My notebook is a fullstack blog website that I developed as a pet project. Besides being fully responsive. some other features of the website are-**
 
 1. Track how many times a blog post has been read
 2. Stats in admin dashboard
